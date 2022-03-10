@@ -18,14 +18,35 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late final TextEditingController _email;
+  late final TextEditingController _password;
+
+  @override
+  void initState() {
+    _email = TextEditingController();
+    _password = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _password.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Register Page")),
+      appBar: AppBar(title: const Text("Register")),
       body: Column(
         children: [
-          const TextField(),
-          const TextField(),
+          TextField(
+            controller: _email,
+          ),
+          TextField(
+            controller: _password,
+          ),
           TextButton(
             child: const Text("Register"),
             onPressed: () async {},
