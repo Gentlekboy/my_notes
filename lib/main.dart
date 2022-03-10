@@ -17,11 +17,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Register Page")),
-      body: Center(
-        child: TextButton(
-          child: const Text("Register"),
-          onPressed: () {},
-        ),
+      body: Column(
+        children: [
+          const TextField(),
+          const TextField(),
+          TextButton(
+            child: const Text("Register"),
+            onPressed: () async {},
+          ),
+        ],
       ),
     );
   }
